@@ -14,13 +14,16 @@ def select_questions(all_questions, count, user):
     liked_questions = [q for q in available if q.get('id') in liked]
     other_questions = [q for q in available if q.get('id') not in liked]
 
+    # Shuffle both lists so ordering isn't deterministic
+    random.shuffle(liked_questions)
+    random.shuffle(other_questions)
+
     chosen = []
     for q in liked_questions:
         if len(chosen) < count:
             chosen.append(q)
 
     # Fill remaining slots randomly from other_questions
-    random.shuffle(other_questions)
     for q in other_questions:
         if len(chosen) < count:
             chosen.append(q)

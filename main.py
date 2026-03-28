@@ -27,11 +27,21 @@ def prompt_choice(prompt, choices):
 
 
 def register(users):
-    username = input('Choose a username: ').strip()
-    if username in users:
-        print('Username already taken.')
-        return None
-    password = input('Choose a password: ').strip()
+    while True:
+        username = input('Choose a username: ').strip()
+        if not username:
+            print('Username cannot be empty.')
+            continue
+        if username in users:
+            print('Username already taken.')
+            return None
+        break
+    while True:
+        password = input('Choose a password: ').strip()
+        if not password:
+            print('Password cannot be empty.')
+            continue
+        break
     users[username] = {
         'password': hash_password(password),
         'score': 0,
@@ -61,11 +71,13 @@ def login(users):
 
 def take_quiz(username, users, questions):
     user = users[username]
-    try:
-        n = int(input('How may questions would you like to answer? '))
-    except ValueError:
-        print('Invalid input. Please enter a valid number.')
-        return
+    # Ask repeatedly until we get an integer
+    while True:
+        try:
+            n = int(input('How may questions would you like to answer? ').strip())
+            break
+        except ValueError:
+            print('Invalid input. Please enter a valid number.')
 
     total_available = len([q for q in questions if q.get('id') not in set(user.get('disliked_ids', []))])
     if total_available == 0:
@@ -141,7 +153,9 @@ def take_quiz(username, users, questions):
                 user.setdefault('disliked_ids', []).append(qid)
             if qid in user.get('liked_ids', []):
                 user['liked_ids'].remove(qid)
-        # else skip
+    # else skip
+    # Persist feedback immediately so it's not lost on crash
+    write_users(users)
 
     points, highest = calculate_score(results)
     print(f'Quiz complete. You scored {points} points.')

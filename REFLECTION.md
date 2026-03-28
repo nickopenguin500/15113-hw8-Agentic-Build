@@ -1,0 +1,9 @@
+1. It fully implemented my spec, but with some WARNs and FAILs from the review agent. It passed 6/7 (85.7%) of my acceptance criteria on the first try.
+
+2. I never had to intervene in Phase 2 except to press continue when the AI was asking to run something in the terminal. I also had to manually exit for the AI to continue, but I'm not sure if that counts as intervening.
+
+3. The AI review was helpful in catching bugs, although most of them were edge cases. When running the app normally and not trying to find bugs, I didn't encounter any of these issues. As far as I can tell, it didn't miss anything important. It marked one of the acceptance criteria as a fail, although I think the way the first agent implemented it would be fine too. More specifically, the acceptance criteria was that if a user inputted a string when asked for the number of questions, it would reprompt. The first agent implemented it such that it gave a warning to input a valid integer and then simply returned to the options screen of [1] Take quiz, [2]... I think this would work, but it didn't match my acceptance criteria exactly, so the review agent labelled it as a FAIL.
+
+4. I think my spec was detailed enough for me to get the quality I wanted. I think some possibilities would be to include more things in the acceptance criteria and error handling sections. There seemed to be many bugs in edge cases that the review agent deemed necessary to fix. Even then, the first agent almost fully passed the acceptance criteria.
+
+5. I think plan-delegate-review is better when trying to implement a complex app that needs to be able to handle any edge cases. Conversational back-and-forth is much easier and faster because the AI doesn't seem to be as aware of bugs. Having a review agent helps with checking for bugs and ensuring that the app works properly. 
