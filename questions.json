@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "What keyword is used to define a function in Python?",
+      "type": "multiple_choice",
+      "options": ["func", "define", "def", "function"],
+      "answer": "def",
+      "category": "Python Basics"
+    },
+    {
+      "id": 2,
+      "question": "A list in Python is immutable.",
+      "type": "true_false",
+      "answer": "false",
+      "category": "Data Structures"
+    },
+    {
+      "id": 3,
+      "question": "What built-in function returns the number of items in a list?",
+      "type": "short_answer",
+      "answer": "len",
+      "category": "Python Basics"
+    },
+    {
+      "id": 4,
+      "question": "Which of these data structures uses key-value pairs?",
+      "type": "multiple_choice",
+      "options": ["List", "Tuple", "Dictionary", "Set"],
+      "answer": "Dictionary",
+      "category": "Data Structures"
+    },
+    {
+      "id": 5,
+      "question": "In Python, 'True' and 'False' must always be capitalized.",
+      "type": "true_false",
+      "answer": "true",
+      "category": "Python Basics"
+    }
+  ]
+}
