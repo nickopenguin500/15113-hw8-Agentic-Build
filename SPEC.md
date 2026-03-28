@@ -79,3 +79,4 @@ The view stats menu must display the user's "Highest  All-Time Streak".
 4. Entering "five" when asked how many questions the user would like to answer does not crash the app, but prompts the user to enter a valid number.
 5. Answering three questions correctly in a row awards exactly 45 points (10 + 15 + 20)
 6. If a user marks a question with "No" (dislike), that specific question will not appear in their next quiz (if possible due to number of questions).
+7. Running the app with an empty question bank prints a friendly error and exits with code 1.
